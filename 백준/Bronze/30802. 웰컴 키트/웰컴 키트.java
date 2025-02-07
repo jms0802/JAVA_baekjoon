@@ -5,21 +5,18 @@ public class Main
 {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		
 		int N = Integer.parseInt(br.readLine());
-		String[] size = br.readLine().split(" ");
+		String[] shirts = br.readLine().split(" ");
 		String[] str = br.readLine().split(" ");
 		int T = Integer.parseInt(str[0]);
 		int P = Integer.parseInt(str[1]);
 		
 		//티셔츠 묶음
 		int Tsum = 0;
-		for(String s : size) {
+		for(String s : shirts) {
 		    int ss = Integer.parseInt(s);
-		    while(ss > 0) {
-		        Tsum++;
-		        ss -= T;
-		    }
+		    Tsum += ss / T;
+		    if(ss % T > 0) Tsum++;
 		}
 		
 		//연필 묶음
