@@ -5,17 +5,19 @@ public class Main
 {
 	public static void main(String[] args) throws IOException{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringBuilder sb = new StringBuilder();
 		
 		int N = Integer.parseInt(br.readLine());
 		
-		int[] arr = new int[N];
+		ArrayList<Integer> arr = new ArrayList<Integer>();
 		for(int i=0;i<N;i++){
-		    arr[i] = Integer.parseInt(br.readLine());
+		    arr.add(Integer.parseInt(br.readLine()));
 		}
 		
-		Arrays.sort(arr);
+		Collections.sort(arr);
 		for(int a : arr){
-		    System.out.println(a);
+		    sb.append(a+"\n");
 		}
+		System.out.println(sb);
 	}
 }
