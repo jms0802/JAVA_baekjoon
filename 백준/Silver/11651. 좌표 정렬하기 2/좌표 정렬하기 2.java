@@ -22,7 +22,7 @@ public class Main
 		});
 		
 		for(int x[] : arr){
-		    sb.append(x[0] + " " + x[1] + "\n");
+		    sb.append(x[0]).append(" ").append(x[1]).append("\n");
 		}
 		
 		System.out.println(sb);
