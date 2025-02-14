@@ -27,8 +27,10 @@ public class Main
 		    int x = Integer.parseInt(st.nextToken());
 		    
 		    if(Arrays.binarySearch(baseArr, x) >= 0)
-		        System.out.println(1);
-		    else System.out.println(0);
+		        sb.append(1 + "\n");
+		    else sb.append(0 + "\n");
 		}
+		
+		System.out.println(sb);
 	}
 }
