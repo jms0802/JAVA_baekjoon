@@ -25,16 +25,16 @@ public class Main
 	        if(c == '(' || c == '[') {
 	            stack.push(c);
 	        } else if(c == ')') {
-	            if(stack.isEmpty() || stack.peek() != '(')
+	            if(stack.empty() || stack.peek() != '(')
 	                return "no";
 	            else stack.pop();
 	        } else if(c == ']') {
-	            if(stack.isEmpty() || stack.peek() != '[')
+	            if(stack.empty() || stack.peek() != '[')
 	                return "no";
 	            else stack.pop();
 	        }
 	    }
-	    if(stack.isEmpty()) return "yes";
+	    if(stack.empty()) return "yes";
 	    else return "no";
 	}
 }
