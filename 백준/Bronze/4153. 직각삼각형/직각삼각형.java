@@ -8,21 +8,23 @@ public class Main
 		StringBuilder sb = new StringBuilder();
 		
 		while(true) {
-		    int[] arr = new int[3];
+		    List<Integer> list = new ArrayList<>();
 		    StringTokenizer st = new StringTokenizer(br.readLine());
-		    arr[0] = Integer.parseInt(st.nextToken());
-		    arr[1] = Integer.parseInt(st.nextToken());
-		    arr[2] = Integer.parseInt(st.nextToken());
+		    int x = Integer.parseInt(st.nextToken());
+		    int y = Integer.parseInt(st.nextToken());
+		    int z = Integer.parseInt(st.nextToken());
 		    
-		    if(arr[0] == 0 && arr[1] == 0 && arr[2] == 0)
+		    if(x == 0 && y == 0 && z == 0)
 		        break;
 		    
+		    list.add(x);
+		    list.add(y);
+		    list.add(z);
+		    Collections.sort(list);
 		    
-		    Arrays.sort(arr);
-		    
-		    int a = arr[0] * arr[0];
-		    int b = arr[1] * arr[1];
-		    int c = arr[2] * arr[2];
+		    int a = list.get(0) * list.get(0);
+		    int b = list.get(1) * list.get(1);
+		    int c = list.get(2) * list.get(2);
 		    if(a+b == c) {
 		        sb.append("right").append("\n");
 		    } else {
