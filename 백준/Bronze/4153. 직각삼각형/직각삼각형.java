@@ -22,9 +22,9 @@ public class Main
 		    list.add(z);
 		    Collections.sort(list);
 		    
-		    int a = list.get(0) * list.get(0);
-		    int b = list.get(1) * list.get(1);
-		    int c = list.get(2) * list.get(2);
+		    int a = (int) Math.pow(list.get(0),2);
+		    int b = (int) Math.pow(list.get(1),2);
+		    int c = (int) Math.pow(list.get(2),2);
 		    if(a+b == c) {
 		        sb.append("right").append("\n");
 		    } else {
