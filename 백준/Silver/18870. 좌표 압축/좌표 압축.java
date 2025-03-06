@@ -9,28 +9,28 @@ public class Main
 
         int N = Integer.parseInt(br.readLine());
 
-        int[][] arr = new int[N][2];
+        int[] origin = new int[N];
+        int[] sorted = new int[N];
+        HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+
         StringTokenizer st = new StringTokenizer(br.readLine());
-        for(int i=0; i<N; i++){
-            arr[i][0] = Integer.parseInt(st.nextToken());
-            arr[i][1] = i;
+        for (int i=0; i<N; i++){
+            origin[i] = Integer.parseInt(st.nextToken());
+            sorted[i] = origin[i];
         }
-        Arrays.sort(arr, (o1, o2) -> {
-            return o1[0] - o2[0];
-        });
+        Arrays.sort(sorted);
 
-        int[] ans = new int[N];
-        int ansIndex = 0;
-        ans[arr[0][1]] = ansIndex;
-        for(int i=1; i<N; i++){
-            if(arr[i][0] != arr[i-1][0])
-                ansIndex++;
-            ans[arr[i][1]] = ansIndex;
+        int rank = 0;
+        for (int a : sorted) {
+            if(!map.containsKey(a)) {
+                map.put(a, rank);
+                rank++;
+            }
         }
 
-        for (int a : ans)
-            sb.append(a).append("\n");
-
+        for (int a : origin){
+            sb.append(map.get(a)).append("\n");
+        }
         System.out.println(sb);
     }
 }
